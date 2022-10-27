@@ -1,10 +1,12 @@
 apiVersion: 1.0.0
 metadata:
   name: sample-cics-api
+attributes:
+  persistVolumes: 'false'
 projects:
   - name: catalog-manager-api
     source:
-      location: 'https://github.com/zosconnect/sample-cics-api.git'
+      location: 'https://github.com/stevefoleycics/sample-cics-api.git'
       type: github
       branch: main
       sparseCheckoutDir: finish
@@ -23,7 +25,7 @@ components:
         value: /projects/catalog-manager-api/finish
     memoryLimit: 4927M
     type: dockerimage
-    image: 'icr.io/zosconnect/ibm-zcon-designer:3.0.58'
+    image: 'icr.io/zosconnect/ibm-zcon-designer:3.0.62'
     alias: zosconnect
   - id: redhat/vscode-yaml/latest
     type: chePlugin
